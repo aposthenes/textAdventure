@@ -8,6 +8,7 @@ from grid import *
 
 
 locCoord = []
+exits = []
 
 """
 The following loop generates a list of values that correspond to the values
@@ -41,6 +42,14 @@ class Location:
         strLoc = "(" + str(self._x) + ", " + str(self._y) + ")"
         return strLoc 
 
+    def findExits(self):
+        global exits 
+        for i in range(self._x - 1, self._x + 2):
+            for j in range(self._y - 1, self._y + 2):
+                print(Location(i, j))
+               # exits.append(Location(i, j))
+      #  return exits
+                
     """
     Here are the canMove options
     How do I verify this? Needs to check the grid for movable objects. Should check whether the player is already standing in that spot...

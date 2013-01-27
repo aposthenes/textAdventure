@@ -1,5 +1,5 @@
 from player import *
-from location import *
+import location
 
 def main():
     
@@ -8,7 +8,7 @@ def main():
 
     name = input("What is your name? ")
     print("Putting you in location (3, 2)")
-    player = Player(name, Location(3,2))
+    player = Player(name, location.Location(3,2))
     print("You are now ", player, "at location ", player._loc)
 
     while(game):
@@ -19,5 +19,8 @@ def main():
         else:
             player.move(prompt)
             print("You are at ", player._loc, "with a low chance of survival.")
+
+    print("Here are the possible exit locations.")
+    player._loc.findExits()
 
 main()

@@ -4,7 +4,6 @@ import location
 # this is the player class
 #
 ########################################
-
 class Player:
 
     def __init__(self, playerName, playerLoc):
