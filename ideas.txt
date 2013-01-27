@@ -1,0 +1,38 @@
+this will pretty much store all of the ideas that i have for the text adventure
+some tasks that i need to set up the whole thing are as follows:
+
+
+1. find out how to get git working on linux,
+   and if there is a need?? (SUBVERSION SYSTEMS)
+2. how do events work in python/programming??
+3. how to make modules...??
+
+first of all, there needs to be a couple of tasks...
+CLASSES:
+    PLAYER
+        --> HEALTH
+        --> MONEY
+    
+    INVENTORY
+        --> basically a big list
+        --> a couple of functions, like gain
+            or loss of items
+        --> can contain OBJECTS/ITEMS
+    
+    ITEMS
+        --> can have certain attributes
+
+    LOCATION
+        --> contains ROOMS
+        --> grid-like system?? I don't know how this will be implemented...
+    
+    ROOMS
+        --> has a LOCATION
+        --> has DOORS
+        --> I dunno
+        --> wtf to do...
+    
+    INTERPRETER
+        --> basically the prompt
+        --> takes in commands and scans stuff
+        --> to make the PLAYER move and such
