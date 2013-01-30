@@ -1,5 +1,6 @@
 from player import *
 import location
+from grid import *
 
 def main():
     
@@ -18,9 +19,12 @@ def main():
             break
         else:
             player.move(prompt)
+            print("exits:")
+            aList = player._loc.findExits()
+            for exit in aList:
+                print(exit)
+            print(grid)
             print("You are at ", player._loc, "with a low chance of survival.")
 
-    print("Here are the possible exit locations.")
-    player._loc.findExits()
 
 main()

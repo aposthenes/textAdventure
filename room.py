@@ -1,7 +1,9 @@
+from location import *
+
 ##########################################
 #
 #
-#
+# Rooms have a name, a location, and exits.
 #
 #
 #
@@ -18,3 +20,4 @@ class Room:
     def __str__(self):
         print(self._name)
         print(self._loc)
+        print(self._loc.findExits())
