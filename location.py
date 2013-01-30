@@ -35,7 +35,7 @@ class Location:
         return strLoc
 
     def __eq__(self, other):
-        if((self._x == other._x) and (self._y == self._y)):
+        if((self._x == other._x) and (self._y == other._y)):
             return True
         else:
             return False
@@ -59,3 +59,4 @@ class Location:
     what about canMove? Do objects have a location? They should move with the player. OMFG why is this so hard. what do i do...
     Forget this, I am moving onto Room objects.
     """
+

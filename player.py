@@ -26,15 +26,15 @@ class Player:
             print("You died! Game over.")
 
     def move(self, direction):
-        north = location.Location(self._loc._y + 1, self._loc._x)
-        south = location.Location(self._loc._y - 1, self._loc._x)
+        north = location.Location(self._loc._y - 1, self._loc._x)
+        south = location.Location(self._loc._y + 1, self._loc._x)
         west = location.Location(self._loc._y, self._loc._x - 1)
         east = location.Location(self._loc._y, self._loc._x + 1)
         
         if((direction == "n" or direction == "north") and self.canMove(north)):
-            self._loc._y += 1
-        elif((direction == "s" or direction == "south") and self.canMove(south)):
             self._loc._y -= 1
+        elif((direction == "s" or direction == "south") and self.canMove(south)):
+            self._loc._y += 1
         elif((direction == "w" or direction == "west") and self.canMove(west)):
             self._loc._x -= 1
         elif((direction == "e" or direction == "east") and self.canMove(east)):
@@ -43,7 +43,7 @@ class Player:
             print("You can't move that way.")
     
     def canMove(self, nextMove):
-        exits = self._loc.findExits()  
+        exits = self._loc.findExits()
         for place in exits:
             if(nextMove == place):
                 return True

@@ -8,8 +8,8 @@ def main():
     game = True
 
     name = input("What is your name? ")
-    print("Putting you in location (3, 2)")
-    player = Player(name, location.Location(3,2))
+    print("Putting you in location (2, 3)")
+    player = Player(name, location.Location(2, 3))
     print("You are now ", player, "at location ", player._loc)
 
     while(game):
