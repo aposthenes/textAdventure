@@ -23,7 +23,6 @@ def main():
             aList = player._loc.findExits()
             for exit in aList:
                 print(exit)
-            print(grid)
             print("You are at ", player._loc, "with a low chance of survival.")
 
 

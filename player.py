@@ -26,13 +26,11 @@ class Player:
             print("You died! Game over.")
 
     def move(self, direction):
-        north = location.Location(self._loc._x, self._loc._y + 1)
-        south = location.Location(self._loc._x, self._loc._y - 1)
-        west = location.Location(self._loc._x - 1, self._loc._y)
-        east = location.Location(self._loc._x + 1, self._loc._y)
-#        print(self.canMove(south))
-#        print(south)
-#        print("The above is if it could happen.")
+        north = location.Location(self._loc._y + 1, self._loc._x)
+        south = location.Location(self._loc._y - 1, self._loc._x)
+        west = location.Location(self._loc._y, self._loc._x - 1)
+        east = location.Location(self._loc._y, self._loc._x + 1)
+        
         if((direction == "n" or direction == "north") and self.canMove(north)):
             self._loc._y += 1
         elif((direction == "s" or direction == "south") and self.canMove(south)):
@@ -42,13 +40,11 @@ class Player:
         elif((direction == "e" or direction == "east") and self.canMove(east)):
             self._loc._x += 1
         else:
-            print("?? Direction error.")
+            print("You can't move that way.")
     
     def canMove(self, nextMove):
         exits = self._loc.findExits()  
         for place in exits:
             if(nextMove == place):
-#                print("these are my exits")
-#                print(place)
                 return True
         return False

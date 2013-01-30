@@ -13,7 +13,20 @@ while(len(row) != 0):
     row = fp.readline()[:-1]
 fp.close()
 
-class Grid:
+print(len(grid))
+print(len(grid[0]))
+
+for i in range(len(grid)):
+    for j in range(len(grid[0])):
+        if(grid[i][j] != "#"):
+            token = "*" 
+        else:
+            token = " "
+        print(str(i) + "x" + str(j), end=token) 
+    print()
+            
+
+class Grid: 
     def __init__(self):
         pass
 
@@ -26,7 +39,11 @@ class Grid:
             gridString+= "\n"
         return gridString
 
+
     def isValid(self, block):
+        """
+        This is not actually in use yet. Dead function.
+        """
         if(block == "o"):
             return False
         else: 
