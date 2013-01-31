@@ -18,6 +18,6 @@ class Room:
         self._loc = location
 
     def __str__(self):
-        print(self._name)
-        print(self._loc)
-        print(self._loc.findExits())
+        roomDesc = self._name + str(self._loc)
+#       print(self._loc.findExits())
+        return roomDesc

@@ -13,16 +13,6 @@ while(len(row) != 0):
     row = fp.readline()[:-1]
 fp.close()
 
-for i in range(len(grid)):
-    for j in range(len(grid[0])):
-        if(grid[i][j] != "#"):
-            token = "*" 
-        else:
-            token = " "
-        print(str(i) + "x" + str(j), end=token) 
-    print()
-            
-
 class Grid: 
     def __init__(self):
         pass
