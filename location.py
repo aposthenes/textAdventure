@@ -24,8 +24,8 @@ for i in range(len(grid)):
 class Location:
 
     def __init__(self, y, x):
-        self._y = y 
-        self._x = x 
+        self._y = int(y)
+        self._x = int(x)
 
 
     def __str__(self):
