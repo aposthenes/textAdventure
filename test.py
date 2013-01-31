@@ -13,24 +13,15 @@ def main():
     print("You are now", player, "at location ", player.getLoc())
 
     while(game):
-        row = player.getLoc().getY() 
-        col = player.getLoc().getX()
-        if(roomsList[row][col] != None):
-            print(roomsList[row][col])
-        else:
-            print("Error: No room description entered for", player.getLoc(), "yet")
+        roomX = player.getLoc().getX()
+        roomY = player.getLoc().getY()
+        print(format(str(player.getLoc().gridLoc()), str(roomsList[roomY][roomX])))
         prompt = input("$ ")
         if prompt == "quit":
             game = False
             break
         else:
             player.move(prompt)
-            print("exits:")
-            aList = player.getLoc().findExits()
-            for exit in aList:
-                print(str(exit) + " ", end = "")
-            print()
-            print("You are at:", player.getLoc())
 
 def genRooms():
     fp = open("myRooms.txt", "r")
@@ -55,4 +46,27 @@ def genRooms():
     fp.close()
     
     return roomList
+
+
+def format(str1, str2):
+    str1 = str1.split("\n")
+    str2 = str2.split("\n")
+    formatted = ""
+
+    if(len(str1) > len(str2)):
+        for i in range(len(str2)):
+            formatted += str1[i] + "    " + str2[i] + "\n"
+        for j in range(len(str2), len(str1)):
+            formatted += str1[j] + "\n"
+    elif(len(str1) < len(str2)):
+        for i in range(len(str1)):
+            formatted += str1[i] + "    " + str2[i] + "\n"
+        for j in range(len(str1), len(str2)):
+            formatted += str2[j] + "\n"
+    else:
+        for i in range(len(str1)):
+            formatted += str1[i] + "    " + str2[i] + "\n"
+
+    formatted + formatted[:-1]
+    return formatted
 main()

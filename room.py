@@ -19,6 +19,12 @@ class Room:
         self._desc = desc
 
     def __str__(self):
-        roomDesc = self._name + str(self._loc) + "\n" + self._desc
-#       print(self._loc.findExits())
+        roomDesc = str(self._loc) + "\n" + self._name + self._desc + "\n" + "Exits: " + formatList(self._loc.findExits())
         return roomDesc
+
+
+def formatList(listOf):
+    strItem = "" 
+    for item in listOf:
+       strItem += str(item) + "  " 
+    return strItem

@@ -62,7 +62,7 @@ class Location:
                         exits.append(Location(i, j))
         return exits
              
-    def printGridLoc(self):
+    def gridLoc(self):
         global grid
         currentGridLoc = deepcopy(grid) 
         currentGridLoc[self._y][self._x] = "x"
@@ -71,7 +71,7 @@ class Location:
             for j in range(len(currentGridLoc[0])):
                 currGridStr += currentGridLoc[i][j] 
             currGridStr += "\n"
-        print(currGridStr)
+        return currGridStr
 
     def printGrid(self):
         global grid
