@@ -58,7 +58,7 @@ class Location:
         exits = []
         for i in range(self._y - 1, self._y + 2):
             for j in range(self._x - 1, self._x + 2):
-                    if(grid[i][j] != "#"):
+                    if(grid[i][j] != "#" and (self != Location(i, j))):
                         exits.append(Location(i, j))
         return exits
              

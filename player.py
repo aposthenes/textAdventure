@@ -14,6 +14,9 @@ class Player:
         char = self._name
         return char
     
+    def getLoc(self):
+        return self._loc
+
     def moveNorth(self):
         self._loc.setY(self._loc.getY() - 1)
 

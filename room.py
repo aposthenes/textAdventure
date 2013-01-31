@@ -19,6 +19,6 @@ class Room:
         self._desc = desc
 
     def __str__(self):
-        roomDesc = self._name + str(self._loc) + self._desc
+        roomDesc = self._name + str(self._loc) + "\n" + self._desc
 #       print(self._loc.findExits())
         return roomDesc

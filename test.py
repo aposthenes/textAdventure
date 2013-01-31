@@ -10,15 +10,15 @@ def main():
     name = input("What is your name? ")
     print("Putting you in location (2, 3)")
     player = Player(name, location.Location(2, 3))
-    print("You are now", player, "at location ", player._loc)
+    print("You are now", player, "at location ", player.getLoc())
 
     while(game):
-        row = player._loc.getY() 
-        col = player._loc.getX()
+        row = player.getLoc().getY() 
+        col = player.getLoc().getX()
         if(roomsList[row][col] != None):
             print(roomsList[row][col])
         else:
-            print("Error: No room description entered for ", player._loc, "yet")
+            print("Error: No room description entered for", player.getLoc(), "yet")
         prompt = input("$ ")
         if prompt == "quit":
             game = False
@@ -26,10 +26,11 @@ def main():
         else:
             player.move(prompt)
             print("exits:")
-            aList = player._loc.findExits()
+            aList = player.getLoc().findExits()
             for exit in aList:
-                print(exit)
-            print("You are at ", player._loc, "with a low chance of survival.")
+                print(str(exit) + " ", end = "")
+            print()
+            print("You are at:", player.getLoc())
 
 def genRooms():
     fp = open("myRooms.txt", "r")
@@ -50,9 +51,6 @@ def genRooms():
         
         if(nextLine == "end"):
             moreLines = False
-
-    for place in roomList:
-        print(place)
     
     fp.close()
     
