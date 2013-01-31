@@ -24,6 +24,7 @@ def main():
             for exit in aList:
                 print(exit)
             print("You are at ", player._loc, "with a low chance of survival.")
+        print(grid)
 
 
 main()

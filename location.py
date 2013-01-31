@@ -1,4 +1,5 @@
 from grid import *
+from copy import deepcopy
 
 #######################
 #
@@ -51,12 +52,22 @@ class Location:
                     if(grid[i][j] != "#"):
                         exits.append(Location(i, j))
         return exits
-               
-
+             
+    def printGridLoc(self):
+        currentGridLoc = deepcopy(grid) 
+        currentGridLoc[self._y][self._x] = "x"
+        currGridStr = ""
+        for i in range(len(currentGridLoc)):
+            for j in range(len(currentGridLoc[0])):
+                currGridStr += currentGridLoc[i][j] 
+            currGridStr += "\n"
+        print(currGridStr)
     """
     TODO:
 
     what about canMove? Do objects have a location? They should move with the player. OMFG why is this so hard. what do i do...
     Forget this, I am moving onto Room objects.
+
+    also, gotta figger out how to make printGridLoc less permanent. It seems to use the same currentGridLoc each time...
     """
 

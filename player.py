@@ -33,12 +33,16 @@ class Player:
         
         if((direction == "n" or direction == "north") and self.canMove(north)):
             self._loc._y -= 1
+            self._loc.printGridLoc()
         elif((direction == "s" or direction == "south") and self.canMove(south)):
             self._loc._y += 1
+            self._loc.printGridLoc()
         elif((direction == "w" or direction == "west") and self.canMove(west)):
             self._loc._x -= 1
+            self._loc.printGridLoc()
         elif((direction == "e" or direction == "east") and self.canMove(east)):
             self._loc._x += 1
+            self._loc.printGridLoc()
         else:
             print("You can't move that way.")
     
