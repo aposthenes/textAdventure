@@ -1,4 +1,3 @@
-from grid import *
 from copy import deepcopy
 
 #######################
@@ -8,18 +7,16 @@ from copy import deepcopy
 #
 #######################
 
-
-locCoord = []
-
-"""
-The following loop generates a list of values that correspond to the values
-on the map in the grid, although it starts with 0.
-NOTE: I don't know if I actually NEED this for anything yet.
-I probably don't, this loop may be overkill and redundant.
-"""
-for i in range(len(grid)):
-    for j in range(len(grid[0])):
-        locCoord.append([i, j])
+#Maybe I should move this loop somewhere else....perhaps
+#in the test.py section so that it only executes once.
+grid = []
+fp = open("world.txt")
+row = fp.readline()[:-1]
+while(len(row) !=0):
+    col = list(row)
+    grid.append(col)
+    row = fp.readline()[:-1]
+fp.close()
 
 class Location:
 
@@ -30,7 +27,7 @@ class Location:
 
     def __str__(self):
         """
-        This is where the location in coordinates would be printed.
+        Returns a string in the form of (y, x)
         """
         strLoc = "(" + str(self._y) + ", " + str(self._x) + ")"
         return strLoc
@@ -40,6 +37,18 @@ class Location:
             return True
         else:
             return False
+
+    def getX(self):
+        return self._x
+
+    def getY(self):
+        return self._y
+
+    def setX(self, x):
+        self._x = x
+
+    def setY(self, y):
+        self._y = y
 
     def findExits(self):
         """
@@ -54,6 +63,7 @@ class Location:
         return exits
              
     def printGridLoc(self):
+        global grid
         currentGridLoc = deepcopy(grid) 
         currentGridLoc[self._y][self._x] = "x"
         currGridStr = ""
@@ -62,12 +72,21 @@ class Location:
                 currGridStr += currentGridLoc[i][j] 
             currGridStr += "\n"
         print(currGridStr)
+
+    def printGrid(self):
+        global grid
+        gridString =""
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                gridString += grid[i][j]
+            gridString += "\n"
+        print(gridString) 
     """
     TODO:
-
-    what about canMove? Do objects have a location? They should move with the player. OMFG why is this so hard. what do i do...
-    Forget this, I am moving onto Room objects.
-
-    also, gotta figger out how to make printGridLoc less permanent. It seems to use the same currentGridLoc each time...
+    for later usage: if the map ends up becoming too huge to have it printed to the player
+    i need to find a way to only print parts of the map at a time. Perhaps limiting it to 
+    8 blocks shown around the player... that actually just seems like fiddling with the i/j
+    numbers a bit on the printGridLoc function above to be honest. I guess theren's nothing
+    else to do in this file?
     """
 

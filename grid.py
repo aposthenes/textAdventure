@@ -1,4 +1,9 @@
-##########################
+"""
+DEAD CLASS
+"""
+
+
+#########################
 #
 # I did it wrong...
 # Location should refer to grid
@@ -25,13 +30,3 @@ class Grid:
                 gridString += grid[i][j] 
             gridString+= "\n"
         return gridString
-
-
-    def isValid(self, block):
-        """
-        This is not actually in use yet. Dead function.
-        """
-        if(block == "o"):
-            return False
-        else: 
-            return True
