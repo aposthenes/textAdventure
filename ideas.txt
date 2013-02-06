@@ -7,6 +7,21 @@ some tasks that i need to set up the whole thing are as follows:
 2. how do events work in python/programming??
 3. how to make modules...??
 
+TODO:
+    1) "you can't move that way"... prints at the TOP of the game description/gameplay.
+        the parser should handle all of the printing, so move stuff from TEST.PY to PARSER.PY
+        also because if you tried to make player's move() print each time stuff happens,
+        all of the print MAP and print ROOMDESCRIPTION is in the variable named roomsList
+        in TEST.PY. These programs are really sticking across each other really quickly.
+    2) my next task is the ITEMS stuff. Letting the user hold a weapon.
+    3) interchangeable with the INVENTORY system
+    4) after that, my PARSER.
+    5) the program isn't massive at all, and it's only one person writing all of this...
+        but at the same time it would be really nice if we could get a COMMENT SYSTEM
+        going on.
+    6) why am I writing in ALL CAPS? Note that in the future I want all significant items that
+        you can look at to be either colored or IN ALL CAPS or BOTH.
+
 first of all, there needs to be a couple of tasks...
 CLASSES:
     PLAYER
