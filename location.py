@@ -83,10 +83,16 @@ class Location:
         print(gridString) 
     """
     TODO:
-    for later usage: if the map ends up becoming too huge to have it printed to the player
-    i need to find a way to only print parts of the map at a time. Perhaps limiting it to 
-    8 blocks shown around the player... that actually just seems like fiddling with the i/j
-    numbers a bit on the printGridLoc function above to be honest. I guess theren's nothing
-    else to do in this file?
+    1) for later usage: if the map ends up becoming too huge to have it printed to the player
+        i need to find a way to only print parts of the map at a time. Perhaps limiting it to 
+        8 blocks shown around the player... that actually just seems like fiddling with the i/j
+        numbers a bit on the printGridLoc function above to be honest. I guess theren's nothing
+        else to do in this file?
+    2) EASY FIX: when printing, need to change the coordinate exits from pure location strings
+        to north/south/east/west
+    3) Will think about how to do ne sw etc. later... Will probably be easy enough? Just + y and - x?
+        but will be done AFTER # 2...
+    4) BLOCK exits from showing if you can't actually physically move there from your block...
+        this method will likely implement the DOOR/BLOCK attribute from room.py... unimportant...
     """
 
