@@ -6,11 +6,11 @@ import os
 
 def main():
     
-    print("Hello and welcome to the testing center.")
+    print("welcome...")
     game = True
     roomsList = genRooms("myRooms.txt")
     name = input("What is your name? ")
-    player = Player(name, location.Location(2, 3))
+    player = Player(name, location.Location(3, 10))
     os.system("clear")     
 
     while(game):
@@ -18,7 +18,7 @@ def main():
         roomY = player.getLoc().getY()
         currentLoc = str(player.getLoc().gridLoc())
         if(roomsList[roomY][roomX] is None):
-            roomDesc = "NO ROOM DESCRIPTION"
+            roomDesc = str(player.getLoc()) + "\n" + "NO ROOM DESCRIPTION"
             print(formatToStr(currentLoc, roomDesc))
         else: 
             convertRoom = str(roomsList[roomY][roomX])

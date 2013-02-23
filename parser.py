@@ -1,13 +1,6 @@
+def main():
 
-def main()
-
-    user = input("Enter something here: ")
-
-
+    commands = input("Enter something here: ").split()
+    print("these were your commands: ", commands)
 
 main()
-
-def parser(*args):
-
-    if(len(args) == 1))f
-        

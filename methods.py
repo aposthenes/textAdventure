@@ -63,6 +63,6 @@ def strBreak(fullString):
         for k in range(lenList % 20 - 1):
             choppedString += strList[count] + " "
             count += 1
-        return choppedString 
+        return choppedString
     else:
         return fullString

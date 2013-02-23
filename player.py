@@ -44,6 +44,7 @@ class Player:
         elif((direction == "e" or direction == "east") and self.canMove(east)):
             self.moveEast() 
         else:
+            # should give assert/error that passes on to the parser...
             print("You can't move that way.")
     
     def canMove(self, nextMove):

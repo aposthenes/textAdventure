@@ -47,7 +47,7 @@ CLASSES:
         --> I dunno
         --> wtf to do...
     
-    INTERPRETER
+    PARSER 
         --> basically the prompt
         --> takes in commands and scans stuff
         --> to make the PLAYER move and such
