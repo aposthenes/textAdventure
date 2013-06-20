@@ -17,6 +17,10 @@ desc = You are in the starting field.
 loc = 1 3
 name = "Above"
 desc = I am trying to see how much I can write. What I am really trying to do is break the string thing. What if I type a lot? What if I type in some more? Am I going to break anything? Will you see it break, will you cry if I do?
+--
+loc = 1 10
+name = "hope"
+desc = I love you, i hate you, suffer and die!
 end
 # If you mess up this file I will kill you.
 # TODO:
